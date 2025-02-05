@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Geolocalizacion</title>
+</head>
+<body>
+    <h1>JavaScript Geolocation</h1>
+    <p>Haz click en el boton para obtener tus coordenadas.</p>
+    <button id="geo" onclick="getLocation()">Donde estoy?</button>
+    <p id="output">Aqui veras el resultado.</p>
+    <script>
+        function getLocation(){
+            navigator.geolocation.getCurrentPosition(onSuccess);
+             
+        }
+
+        function onSuccess(position){
+            let name = prompt('Ingresa aqui tu nombre: ')
+            document.getElementById("output").innerHTML = "Hola " + name + " esta es tu ubicacion actual: <br>Latitud: " + position.coords.latitude + ".<br>Longitud: " + position.coords.longitude;
+        }
+    </script>
+</body> 
+</html>
